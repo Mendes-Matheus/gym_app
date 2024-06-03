@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:msm_gym_app/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:msm_gym_app/common/widgets/login_signup/form_divider.dart';
 import 'package:msm_gym_app/common/widgets/login_signup/social_buttons.dart';
 import 'package:msm_gym_app/features/authentication/screens/login/widgets/logins_header.dart';
 import '../../../../common/styles/spacing_styles.dart';
-import '../../../../util/constants/colors.dart';
-import '../../../../util/constants/image_strings.dart';
 import '../../../../util/constants/sizes.dart';
 import '../../../../util/constants/texts.dart';
 import '../../../../util/helpers/helper_functions.dart';
