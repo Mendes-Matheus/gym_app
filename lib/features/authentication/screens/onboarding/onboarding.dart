@@ -31,19 +31,22 @@ Widget _buildUI(BuildContext context) {
         onPageChanged: controller.updatePageIndicator,
         children: [
           OnBoardingPage(
-              image: dark
-                  ? TImages.onboardingImage1Dark
-                  : TImages.onboardingImage1Light,
-              title: TTexts.onboardTitle1,
-              subTitle: TTexts.onboardingSubTitle1),
+            image: dark
+                ? TImages.onboardingImage1Dark
+                : TImages.onboardingImage1Light,
+            title: TTexts.onboardTitle1,
+            subTitle: TTexts.onboardingSubTitle1,
+          ),
           const OnBoardingPage(
-              image: TImages.onboardingImage2,
-              title: TTexts.onboardTitle2,
-              subTitle: TTexts.onboardingSubTitle2),
+            image: TImages.onboardingImage2,
+            title: TTexts.onboardTitle2,
+            subTitle: TTexts.onboardingSubTitle2,
+          ),
           const OnBoardingPage(
-              image: TImages.onboardingImage3,
-              title: TTexts.onboardTitle3,
-              subTitle: TTexts.onboardingSubTitle3),
+            image: TImages.onboardingImage3,
+            title: TTexts.onboardTitle3,
+            subTitle: TTexts.onboardingSubTitle3,
+          ),
         ],
       ),
 
