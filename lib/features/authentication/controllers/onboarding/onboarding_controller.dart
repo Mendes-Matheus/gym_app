@@ -17,8 +17,17 @@ class OnboardingController extends GetxController {
   bool isDarkModeAuto = false;
 
   /// Update current index when page scroll
-  void updatePageIndicator(index) => currentPageIndex.value = index;
-
+  void updatePageIndicator(index) {
+    currentPageIndex.value = index;
+    // if (index == 2) {
+    //   Future.delayed(const Duration(seconds: 10)).then((_) {
+    //     if (currentPageIndex.value == 2) {
+    //       Get.offAll(() => const LoginScreen());
+    //     }
+    //   });
+    // }
+  }
+  
   /// Jump to the specific dot selected page
   void dotNavigationClick(index) {
     currentPageIndex.value = index;
@@ -28,7 +37,7 @@ class OnboardingController extends GetxController {
   /// Update current index and jump to next page
   void nextPage() {
     if (currentPageIndex.value == 2) {
-      Get.offAll(const LoginScreen());
+      Get.offAll(() => const LoginScreen());
     } else {
       currentPageIndex.value++;
       pageController.jumpToPage(currentPageIndex.value);
@@ -43,12 +52,13 @@ class OnboardingController extends GetxController {
 
   /// Update current index and skip to last page
   void skipPage() {
-    currentPageIndex.value = 2;
-    pageController.jumpToPage(2);
+    Get.offAll(() => const LoginScreen());
   }
 
-
-
-
+  void handlePageEnd() {
+    if (currentPageIndex.value == 2) {
+      Get.offAll(() => const LoginScreen());
+    }
+  }
 
 }
