@@ -23,31 +23,43 @@ class OnboardingScreen extends StatelessWidget {
 Widget _buildUI(BuildContext context) {
   final controller = Get.put(OnboardingController());
   final dark = THelperFunctions.isDarkMode(context);
+
   return Stack(
     children: [
       /// Horizontal Scrollable Pages
-      PageView(
+      PageView.builder(
         controller: controller.pageController,
-        onPageChanged: controller.updatePageIndicator,
-        children: [
-          OnBoardingPage(
-            image: dark
-                ? TImages.onboardingImage1Dark
-                : TImages.onboardingImage1Light,
-            title: TTexts.onboardTitle1,
-            subTitle: TTexts.onboardingSubTitle1,
-          ),
-          const OnBoardingPage(
-            image: TImages.onboardingImage2,
-            title: TTexts.onboardTitle2,
-            subTitle: TTexts.onboardingSubTitle2,
-          ),
-          const OnBoardingPage(
-            image: TImages.onboardingImage3,
-            title: TTexts.onboardTitle3,
-            subTitle: TTexts.onboardingSubTitle3,
-          ),
-        ],
+        onPageChanged: (index) {
+          if (index == 3) {
+            controller.updatePageIndicator(2);  // Ensures index does not go beyond the last page
+            controller.nextPage();
+          } else {
+            controller.updatePageIndicator(index);
+          }
+        },
+        itemCount: 4,  // Extra page for detecting scroll beyond the last page
+        itemBuilder: (context, index) {
+          if (index == 3) {
+            return Container();  // Empty container for the extra page
+          }
+          return OnBoardingPage(
+            image: index == 0
+                ? (dark ? TImages.onboardingImage1Dark : TImages.onboardingImage1Light)
+                : index == 1
+                ? TImages.onboardingImage2
+                : TImages.onboardingImage3,
+            title: index == 0
+                ? TTexts.onboardTitle1
+                : index == 1
+                ? TTexts.onboardTitle2
+                : TTexts.onboardTitle3,
+            subTitle: index == 0
+                ? TTexts.onboardingSubTitle1
+                : index == 1
+                ? TTexts.onboardingSubTitle2
+                : TTexts.onboardingSubTitle3,
+          );
+        },
       ),
 
       /// Skip Button
