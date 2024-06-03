@@ -8,13 +8,14 @@ class TImages {
   static const String splashIcon = 'assets/icons/splash_icon.png';
 
   // App Logos
-  static const String logoLight = 'assets/logos/store_logo_light.png';
-  static const String logoDark = 'assets/logos/store_logo_dark.png';
+  static const String logoLight = 'assets/logos/m_logo_light.png';
+  static const String logoDark = 'assets/logos/m_logo_dark.png';
 
   // Social Logos
-  static const String googleLogo = 'assets/logos/google_icon.png';
-  static const String appleLogo = 'assets/logos/apple_icon.png';
-  static const String facebookLogo = 'assets/logos/facebook_icon.png';
+  static const String googleLogo = 'assets/icons/social_media/google.png';
+  static const String xLogo = 'assets/icons/social_media/x_twitter.png';
+  static const String facebookLogo = 'assets/icons/social_media/facebook.png';
+  static const String appleLogo = 'assets/icons/social_media/apple.png';
 
   // Onboarding Images
   static const String onboardingImage1Dark = 'assets/images/on_boarding_images/troll_dark_mode.json';

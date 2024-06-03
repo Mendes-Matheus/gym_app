@@ -14,7 +14,7 @@ class TTexts {
 
   // Authentication Heading Texts
   static const String loginTitle = "Seja bem-vindo!";
-  static const String loginSubtitle = "Descubra os limites do seu corpo. Aprenda a ser mais \u{1F60B}";
+  static const String loginSubtitle = "Descubra os limites do seu corpo!";
   static const String singInHeading = "Confirme seus dados para acessar sua conta";
   static const String singUpHeading = "Crie uma conta exclusiva";
   static const String forgetPasswordTitle = "Esqueceu sua senha?";
