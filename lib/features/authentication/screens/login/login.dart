@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
+import 'package:msm_gym_app/features/authentication/screens/login/widgets/login_form.dart';
+import 'package:msm_gym_app/common/widgets/login_signup/form_divider.dart';
+import 'package:msm_gym_app/common/widgets/login_signup/social_buttons.dart';
+import 'package:msm_gym_app/features/authentication/screens/login/widgets/logins_header.dart';
 import '../../../../common/styles/spacing_styles.dart';
 import '../../../../util/constants/colors.dart';
 import '../../../../util/constants/image_strings.dart';
@@ -25,114 +29,24 @@ Widget _loginUI(BuildContext context) {
     child: Padding(
       padding: SpacingStyles.paddingWithAppBarHeight,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           /// Login, Title and Subtitle
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image(
-                height: 150,
-                image: AssetImage(
-                  dark ? TImages.logoDark : TImages.logoLight,
-                ),
-              ),
-              Text(
-                TTexts.loginTitle,
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-              const SizedBox(height: TSizes.small),
-              Text(
-                TTexts.loginSubtitle,
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-            ],
-          ),
-          Form(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: TSizes.defaultSpacing),
-              child: Column(
-                children: [
-                  /// Email
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: TTexts.email,
-                      prefixIcon: Icon(Iconsax.direct_right),
-                    ),
-                  ),
-                  const SizedBox(height: TSizes.spaceBetweenInputFields),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: TTexts.password,
-                      prefixIcon: Icon(Iconsax.password_check),
-                      suffixIcon: Icon(Iconsax.eye_slash),
-                    ),
-                  ),
-                  const SizedBox(height: TSizes.spaceBetweenInputFields / 2),
+          LoginHeader(dark: dark),
+          const SizedBox(height: TSizes.defaultSpacing),
 
-                  /// Remember and Forget Password
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          /// Remember me
-                          Checkbox(
-                            value: true,
-                            onChanged: (value) {},
-                          ),
-                          Text(
-                            TTexts.rememberMe,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-
-                          /// Forget Password
-                          TextButton(
-                            onPressed: () {},
-                            child: const Text(TTexts.forgetPassword),
-                          ),
-
-                          /// Sign Button
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: const Text(TTexts.signIn),
-                            ),
-                          ),
-                          const SizedBox(height: TSizes.spacingBetweenItems),
-
-                          /// Create Account Button
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: const Text(TTexts.createAccount),
-                            ),
-                          ),
-                          const SizedBox(height: TSizes.spacingBetweenSections),
-                        ],
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ),
+          /// Login Form
+          const LoginForm(),
 
           /// Divider
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Divider(
-                color: dark ? TColors.darkGreyColor : TColors.greyColor,
-                thickness: 0.5,
-                indent: 60,
-                endIndent: 5,
-              ),
-            ],
-          )
+          FormDivider(dark: dark, dividerText: TTexts.orSignInWith.capitalize!),
+          const SizedBox(height: TSizes.spacingBetweenItems),
+
+          /// Social Media Buttons
+          const SocialButtons(),
         ],
       ),
     ),
   );
 }
+
