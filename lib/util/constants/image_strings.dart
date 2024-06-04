@@ -13,7 +13,8 @@ class TImages {
 
   // Social Logos
   static const String googleLogo = 'assets/icons/social_media/google.png';
-  static const String xLogo = 'assets/icons/social_media/x_twitter.png';
+  static const String xLogoDark = 'assets/icons/social_media/x_twitter_white_icon.png';
+  static const String xLogoLight = 'assets/icons/social_media/x_twitter_black_icon.png';
   static const String facebookLogo = 'assets/icons/social_media/facebook.png';
   static const String appleLogo = 'assets/icons/social_media/apple.png';
 
