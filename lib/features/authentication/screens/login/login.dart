@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:msm_gym_app/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:msm_gym_app/common/widgets/login_signup/form_divider.dart';
 import 'package:msm_gym_app/common/widgets/login_signup/social_buttons.dart';
-import 'package:msm_gym_app/features/authentication/screens/login/widgets/logins_header.dart';
+import 'package:msm_gym_app/features/authentication/screens/login/widgets/login_header.dart';
 import '../../../../common/styles/spacing_styles.dart';
 import '../../../../util/constants/sizes.dart';
 import '../../../../util/constants/texts.dart';
@@ -34,6 +34,8 @@ Widget _loginUI(BuildContext context) {
 
           /// Login Form
           const LoginForm(),
+          const SizedBox(height: TSizes.spacingBetweenSections),
+
 
           /// Divider
           FormDivider(dark: dark, dividerText: TTexts.orSignInWith.capitalize!),
