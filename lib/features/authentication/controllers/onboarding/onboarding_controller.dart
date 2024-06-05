@@ -55,6 +55,10 @@ class OnboardingController extends GetxController {
     Get.offAll(() => const LoginScreen());
   }
 
+  void backPage() {
+    Get.offAll(() => const LoginScreen());
+  }
+
   void handlePageEnd() {
     if (currentPageIndex.value == 2) {
       Get.offAll(() => const LoginScreen());
