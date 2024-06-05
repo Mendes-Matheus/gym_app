@@ -30,6 +30,7 @@ class TTexts {
   static const String accountCreatedSubtitle = "Bem-vindo a melhor plataforma de treino. Agora basta saber como se manter em forma.";
 
   // -- Authentication Form Text
+  static const String name = "Nome";
   static const String firstName = "Primeiro Nome";
   static const String lastName = "Sobrenome";
   static const String email = "E-Mail";
@@ -40,13 +41,13 @@ class TTexts {
   static const String phoneNo = "Número de Telefone";
   static const String rememberMe = "Lembrar-me";
   static const String forgetPassword = "Esqueceu a Senha?";
-  static const String signIn = "Entrar";
+  static const String signIn = "Login";
   static const String createAccount = "Criar Conta";
-  static const String orSignInWith = "ou entrar com";
-  static const String orSignUpWith = "ou inscrever-se com";
-  static const String iAgreeTo = "Eu concordo com";
-  static const String privacyPolicy = "Política de Privacidade";
-  static const String termsOfUse = "Termos de Uso";
+  static const String orSignInWith = "Fazer login com";
+  static const String signUpWith = "Criar conta com";
+  static const String iAgreeTo = "Concordo com ";
+  static const String privacyPolicy = "a Política de Privacidade";
+  static const String termsOfUse = "e os Termos de Uso";
   static const String verificationCode = "Código de Verificação";
   static const String resendEmail = "Reenviar E-mail";
   static const String resendEmailIn = "Reenviar e-mail em";
