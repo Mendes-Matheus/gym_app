@@ -45,9 +45,10 @@ class TTexts {
   static const String createAccount = "Criar Conta";
   static const String orSignInWith = "Fazer login com";
   static const String signUpWith = "Criar conta com";
-  static const String iAgreeTo = "Concordo com ";
-  static const String privacyPolicy = "a Política de Privacidade";
-  static const String termsOfUse = "e os Termos de Uso";
+  static const String iAgreeTo = "\tConcordo com a ";
+  static const String privacyPolicy = "Política de Privacidade ";
+  static const String andThe = "e os ";
+  static const String termsOfUse = "Termos de Uso";
   static const String verificationCode = "Código de Verificação";
   static const String resendEmail = "Reenviar E-mail";
   static const String resendEmailIn = "Reenviar e-mail em";
