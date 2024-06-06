@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:msm_gym_app/features/authentication/screens/signup/widgets/terms_condition_checkbox.dart';
 import '../../../../../util/constants/sizes.dart';
 import '../../../../../util/constants/texts.dart';
-
 
 class SignupForm extends StatelessWidget {
   const SignupForm({
@@ -66,50 +66,7 @@ class SignupForm extends StatelessWidget {
           ),
           const SizedBox(height: TSizes.spaceBetweenInputFields),
           // Privacy Policy and Terms Use
-          Wrap(
-            alignment: WrapAlignment.start,
-            children: [
-              SizedBox(
-                width: 20,
-                height: Checkbox.width,
-                child: Checkbox(
-                  value: true,
-                  onChanged: (value) {},
-                ),
-              ),
-              // Text.rich(
-              //   TextSpan(
-              //     children: [
-              //       TextSpan(
-              //         text: TTexts.iAgreeTo,
-              //         style: Theme.of(context).textTheme.labelMedium,
-              //       ),
-              //       TextSpan(
-              //         text: TTexts.privacyPolicy,
-              //         style: Theme.of(context).textTheme.labelMedium,
-              //       ),
-              //       TextSpan(
-              //         text: TTexts.termsOfUse,
-              //         style: Theme.of(context).textTheme.labelMedium,
-              //       ),
-              //     ],
-              //   ),
-              // ),
-              Text(
-                TTexts.iAgreeTo,
-                style: Theme.of(context).textTheme.labelMedium,
-              ),
-              Text(
-                TTexts.privacyPolicy,
-                style: Theme.of(context).textTheme.labelMedium,
-              ),
-              Text(
-                TTexts.termsOfUse,
-                style: Theme.of(context).textTheme.labelMedium,
-              ),
-            ],
-          ),
-          const SizedBox(height: TSizes.spacingBetweenSections),
+          const TermsAndConditionCheckbox(),
           // Sign Up Button
           SizedBox(
             width: double.infinity,
