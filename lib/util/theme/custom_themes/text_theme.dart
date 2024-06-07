@@ -65,11 +65,16 @@ class TTextTheme {
           fontSize: 12.0,
           fontWeight: FontWeight.normal,
           color: Colors.black.withOpacity(0.5),
+          letterSpacing: 1,
+          wordSpacing: 1.1,
         ),
         labelSmall: const TextStyle().copyWith(
           fontSize: 12.0,
           fontWeight: FontWeight.normal,
           color: Colors.black.withOpacity(0.5),
+          height: -4.2,
+          letterSpacing: 1,
+          wordSpacing: 1.1,
         ),
       );
 
