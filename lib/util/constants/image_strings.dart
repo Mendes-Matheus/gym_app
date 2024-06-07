@@ -24,6 +24,10 @@ class TImages {
   static const String onboardingImage2 = 'assets/images/on_boarding_images/male-boxer.json';
   static const String onboardingImage3 = 'assets/images/on_boarding_images/dog.json';
 
-
+  static const String verifySendEmail = 'assets/images/signup_images/send_email.png';
+  static const String verifyEmail = 'assets/images/signup_images/email.png';
+  static const String accountCreated = 'assets/images/signup_images/approved.png';
+  static const String accountCreated2 = 'assets/images/signup_images/accepted.png';
+  static const String accountCreated3 = 'assets/images/signup_images/check.png';
 
 }
