@@ -10,7 +10,9 @@ class AccountCreatedSuccessScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _accountCreatedSuccessScreen(context);
+    return Scaffold(
+      body: _accountCreatedSuccessScreen(context),
+    );
   }
 }
 
