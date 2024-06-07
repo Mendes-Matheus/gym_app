@@ -22,7 +22,7 @@ class TTexts {
   static const String changeYourPasswordTitle = "Alterar sua senha";
   static const String changeYourPasswordSubtitle = "A segurança de sua conta é nossa prioridade! Enviaremos um link em seu e-mail para redefinir sua senha";
   static const String confirmEmailTitle = "Verifique seu e-mail";
-  static const String confirmEmailSubtitle = "Foi enviado um e-mail para example@example.com. Verifique sua caixa de entrada e clique no link para confirmar e prosseguir com o login.";
+  static const String confirmEmailSubtitle = "Para continuar, insira abaixo o código enviado para example@example.com. Procure na caixa de entrada ou na caixa de spam o e-mail enviado.";
   static const String emailNotReceivedTitle = "Não recebeu o e-mail? Verifique na sua caixa de spam";
   static const String resendEmailTitle = "Reenviar e-mail";
   static const String resendEmailSubtitle = "Reenviar e-mail de confirmação";
