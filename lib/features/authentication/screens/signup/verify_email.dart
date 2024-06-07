@@ -11,7 +11,7 @@ class VerifyEmailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( // Adiciona um Scaffold aqui
+    return Scaffold(
       body: _verifyEmail(context),
     );
   }
@@ -44,7 +44,7 @@ Widget _verifyEmail(BuildContext context) {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: TSizes.spacingBetweenSections),
-          const VerificationCodeInput(), // Adicionando o campo de verificação aqui
+          const VerificationCodeInput(),
           const SizedBox(height: TSizes.spacingBetweenSections),
           SizedBox(
             width: double.infinity,
@@ -74,7 +74,6 @@ class _VerificationCodeInputState extends State<VerificationCodeInput> {
   @override
   void initState() {
     super.initState();
-    // Initialize controllers and focus nodes
     for (int i = 0; i < codeLength; i++) {
       controllers.add(TextEditingController());
       focusNodes.add(FocusNode());
@@ -83,7 +82,6 @@ class _VerificationCodeInputState extends State<VerificationCodeInput> {
 
   @override
   void dispose() {
-    // Dispose controllers and focus nodes
     for (int i = 0; i < codeLength; i++) {
       controllers[i].dispose();
       focusNodes[i].dispose();
@@ -92,8 +90,14 @@ class _VerificationCodeInputState extends State<VerificationCodeInput> {
   }
 
   void _nextField(String value, int index) {
-    if (value.length == 1 && index < codeLength - 1) {
-      FocusScope.of(context).requestFocus(focusNodes[index + 1]);
+    if (value.length == 1) {
+      if (index < codeLength - 1) {
+        FocusScope.of(context).requestFocus(focusNodes[index + 1]);
+      } else {
+        focusNodes[index].unfocus();
+      }
+    } else if (value.isEmpty && index > 0) {
+      FocusScope.of(context).requestFocus(focusNodes[index - 1]);
     }
   }
 
@@ -103,15 +107,15 @@ class _VerificationCodeInputState extends State<VerificationCodeInput> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: List.generate(codeLength, (index) {
         return SizedBox(
-          width: 35,
-          height: 35,
+          width: 40,
+          height: 40,
           child: TextField(
             controller: controllers[index],
             focusNode: focusNodes[index],
             maxLength: 1,
             textAlign: TextAlign.center,
             decoration: const InputDecoration(
-              counterText: "", // Remove the bottom counter text
+              counterText: "",
             ),
             keyboardType: TextInputType.text,
             onChanged: (value) => _nextField(value, index),
